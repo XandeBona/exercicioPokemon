@@ -3,10 +3,10 @@
     --cor-principal: #910404;
     --cor-secundaria: #4e0000;
     --cor-titulo: #6b0303;
-  }
-  
-  /* Estilização geral do body */
-  body {
+}
+
+/* Estilização geral do body */
+body {
     font-family: Arial, sans-serif;
     background-color: #ececec;
     display: flex;
@@ -17,17 +17,17 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-  }
-  
-  /* Estilização do título */
-  h2 {
+}
+
+/* Estilização do título */
+h2 {
     margin-bottom: 20px;
     text-align: center;
     color: var(--cor-titulo);
-  }
-  
-  /* Estilização do container que envolve a busca de livros */
-  .div_container {
+}
+
+/* Estilização do container que envolve a busca de livros */
+.div_container {
     background-color: rgb(252, 252, 252);
     padding: 30px 40px;
     border-radius: 10px;
@@ -35,66 +35,67 @@
     width: 100%;
     max-width: 400px;
     margin-top: 40px;
-  }
-  
-  /* Estilização do formulário da busca de livros */
-  .div_form {
+}
+
+/* Estilização do formulário da busca de livros */
+.div_form {
     display: flex;
     flex-direction: column;
-  }
-  
-  .div_form label {
+}
+
+.div_form label {
     margin-bottom: 5px;
     font-weight: bold;
-  }
-  
-  .div_form input {
+}
+
+.div_form input {
     padding: 10px;
     border: 1px solid #cecece;
     border-radius: 5px;
-  }
-  
-  .div_form input:focus {
+}
+
+.div_form input:focus {
     border-color: var(--cor-principal);
     outline: none;
-  }
-  
-  /* Estilização do container que envolve a tabela da lista de livros salvos */
-  .div_table {
+}
+
+/* Estilização do container que envolve a tabela da lista de livros salvos */
+.div_table {
     background-color: rgb(252, 252, 252);
     padding: 30px 40px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
     margin-top: 40px;
     margin-left: 20px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    
 
-  }
-  
-  /* Estilização da tabela de livros salvos */
-  #table_team {
+}
+
+/* Estilização da tabela de livros salvos */
+#table_team {
     border-collapse: collapse;
     width: 100%;
-  }
-  
-  #table_team th,
-  #table_team td {
+}
+
+#table_team th,
+#table_team td {
     border: 1px solid black;
-    padding: 8px;
+    padding: 4px;
     text-align: center;
-    white-space: pre-wrap;
-  }
-  
-  #table_team th {
+    width: 160px;
+    height: 160px;
+}
+
+#table_team th {
     color: var(--cor-titulo);
-  }
-  
-  /* Estilização do botão */
-  button {
+}
+
+/* Estilização do botão */
+button {
     padding: 7px;
     background-color: var(--cor-principal);
     color: white;
@@ -104,30 +105,32 @@
     font-weight: bold;
     transition: 0.3s;
     max-width: 110px;
-  }
-  
-  button:hover {
-    background-color: var(--cor-secundaria);
-  }
-  
-  /* Estilização de responsividade para dispositivos móveis (celulares) */
-  @media (max-width: 480px) {
-    .div_container,
-    .div_table {
-      margin: 0;
-      width: 100%;
-      max-width: 100%;
-      font-size: 10px;
-    }
-  }
+}
 
-  /* Estilização de responsividade para tablets */
-  @media (max-width: 769px) {
+button:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Estilização de responsividade para dispositivos móveis (celulares) */
+@media (max-width: 480px) {
+
     .div_container,
     .div_table {
-      margin: 0;
-      width: 100%;
-      max-width: 100%;
-      font-size: 12px;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        font-size: 10px;
     }
-  }
+}
+
+/* Estilização de responsividade para tablets */
+@media (max-width: 769px) {
+
+    .div_container,
+    .div_table {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        font-size: 12px;
+    }
+}

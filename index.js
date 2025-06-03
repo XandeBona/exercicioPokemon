@@ -1,20 +1,31 @@
 let mainPokeTeamList = [];
 
-function addPokeToTeam() {
+function addPokeToTeam(pokemon) {
+    const newColumn = document.createElement('td');
+    const pokeNameTeam = document.createElement('td');
+    const pokeSpriteTeam = document.createElement('img');
+
+    pokeSpriteTeam.src = pokemon.pokeSprite;
+    pokeNameTeam.innerHTML = pokemon.pokeName;
+
     
+    newColumn.appendChild(pokeSpriteTeam);
+        
+    const pokeTeamTable = document.getElementById("table_team");
+    pokeTeamTable.appendChild(newColumn);
 }
 
 function savePokemon() {
     const inputPokeName = document.getElementById("poke_name");
-    const inputPokeSprite = document.getElementById("poke_sprite");
+    const inputPokeSprite = document.getElementById("poke_sprite").src;
 
     const newPoke = {
         pokeName: inputPokeName.value,
-        pokeSprite: inputPokeSprite.value
+        pokeSprite: inputPokeSprite
     }
 
     addPokeToTeam(newPoke);
-
+    console.log(newPoke.pokeSprite);
     mainPokeTeamList.push(newPoke);
 
 }
