@@ -1,5 +1,7 @@
+//Lista para salvar os Pokémons
 let mainPokeTeamList = [];
 
+//Função para salvar o Pokémon na tabela
 function addPokeToTeam(pokemon) {
     const newColumn = document.createElement('td');
     const pokeNameTeam = document.createElement('td');
@@ -15,6 +17,7 @@ function addPokeToTeam(pokemon) {
     pokeTeamTable.appendChild(newColumn);
 }
 
+//Função para salvar o Pokémon como objeto
 function savePokemon() {
     const inputPokeName = document.getElementById("poke_name");
     const inputPokeSprite = document.getElementById("poke_sprite").src;
@@ -30,6 +33,7 @@ function savePokemon() {
 
 }
 
+//Função de pesquisa API para localizar Pokémon
 function pokeSearch() {
     const inputPokeName = document.getElementById("poke_name");
     const pokeNameValue = inputPokeName.value;
@@ -45,6 +49,7 @@ function pokeSearch() {
         });
 }
 
+//Gerenciador de eventos
 function manageEvent() {
     const inputPokeName = document.getElementById("poke_name");
     inputPokeName.addEventListener("focusout", pokeSearch);

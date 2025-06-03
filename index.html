@@ -10,35 +10,43 @@
 </head>
 
 <body>
+    <!-- Div container -->
     <div class="div_container">
         <h2>Monte seu time</h2>
+        <!-- Div para o formulário -->
         <div class="div_form">
+            <!-- Input para o usuário informar o Pokémon -->
             <label for="poke_name">Informe o nome do Pokémon:</label>
             <input type="text" name="" id="poke_name" placeholder="Nome do Pokémon">
+            <!-- Campo para aparecer o nome do Pokémon -->
             <div class="div_info">
                 <h4>Nome:</h4>
                 <p id="poke_name_info"></p>
             </div>
+            <!-- Campo para aparecer o número do Pokémon -->
             <div class="div_info">
                 <h4>Número na Pokédex:</h4>
                 <p id="poke_number"></p>
             </div>
+            <!-- Campo para aparecer o tipo do Pokémon -->
             <div class="div_info">
                 <h4>Tipo:</h4>
                 <p id="poke_type0"></p>
                 <p id="poke_type1"></p>
             </div>
+            <!-- Campo para aparecer a imagem do Pokémon -->
             <div class="div_info">
                 <h4>Sprite:</h4>
                 <img id="poke_sprite"></img>
             </div>
         </div>
+        <!-- Botão para adicionar Pokémon na tabela de time -->
         <button id="save_button">Adicionar ao time</button>
     </div>
+    <!-- Tabela de time de Pokémon -->
     <div class="div_table">
         <h2>Seu time</h2>
         <table id="table_team">
-
         </table>
     </div>
 </body>

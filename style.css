@@ -71,8 +71,6 @@ h2 {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    
-
 }
 
 /* Estilização da tabela de livros salvos */
