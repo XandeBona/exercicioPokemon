@@ -3,22 +3,41 @@ let mainPokeTeamList = [];
 
 //Função para salvar o Pokémon na tabela
 function addPokeToTeam(pokemon) {
-    const newColumn = document.createElement('td');
-    const pokeNameTeam = document.createElement('td');
-    const pokeSpriteTeam = document.createElement('img');
-
-    pokeSpriteTeam.src = pokemon.pokeSprite;
-    pokeNameTeam.innerHTML = pokemon.pokeName;
-
+    //Cria o nome
+    const pokeNameTeam = document.createElement('p');
+    pokeNameTeam.innerText = pokemon.pokeName;
     
-    newColumn.appendChild(pokeSpriteTeam);
-        
+    //Cria a imagem
+    const pokeSpriteTeam = document.createElement('img');
+    pokeSpriteTeam.src = pokemon.pokeSprite;
+
+    //Adiciona na célula
+    const pokeColumn = document.createElement('td');
+    pokeColumn.appendChild(pokeSpriteTeam);
+    pokeColumn.appendChild(pokeNameTeam);
+
+    //Adiciona na tabela em si
     const pokeTeamTable = document.getElementById("table_team");
-    pokeTeamTable.appendChild(newColumn);
+
+    //Se for o primeiro Pokémon ou a cada múltiplo de 3, cria uma nova linha
+    if (mainPokeTeamList.length % 3 === 0) {
+        const newRow = document.createElement('tr');
+        pokeTeamTable.appendChild(newRow);
+    }
+
+    //Adiciona na última linha da tabela
+    const lastRow = pokeTeamTable.lastElementChild;
+    lastRow.appendChild(pokeColumn);
 }
 
 //Função para salvar o Pokémon como objeto
+//Se houver mais de 6 Pokémon salvos, terá este erro:
 function savePokemon() {
+    if (mainPokeTeamList.length >= 6) {
+        alert("Limite de 6 Pokémon no time! Remova um antes de adicionar outro.");
+        return;
+    }
+
     const inputPokeName = document.getElementById("poke_name");
     const inputPokeSprite = document.getElementById("poke_sprite").src;
 

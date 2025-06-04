@@ -41,6 +41,7 @@ h2 {
 .div_form {
     display: flex;
     flex-direction: column;
+    text-transform: capitalize
 }
 
 .div_form label {
@@ -132,3 +133,4 @@ button:hover {
         font-size: 12px;
     }
 }
+
