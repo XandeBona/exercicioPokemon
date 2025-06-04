@@ -6,7 +6,7 @@ function addPokeToTeam(pokemon) {
     //Cria o nome
     const pokeNameTeam = document.createElement('p');
     pokeNameTeam.innerText = pokemon.pokeName;
-    
+
     //Cria a imagem
     const pokeSpriteTeam = document.createElement('img');
     pokeSpriteTeam.src = pokemon.pokeSprite;
@@ -47,8 +47,24 @@ function savePokemon() {
     }
 
     addPokeToTeam(newPoke);
-    console.log(newPoke.pokeSprite);
+
     mainPokeTeamList.push(newPoke);
+
+    localStorage.setItem("table_team", JSON.stringify(mainPokeTeamList));
+
+}
+
+//Função para carregar os Pokémon que foram salvos anteriormente no localStorage
+function loadPokemon() {
+    const storage = JSON.parse(localStorage.getItem("table_team"));
+    mainPokeTeamList = storage ? storage : [];
+
+    //Reinsire os Pokémon salvos anteriormente na tabela
+    for (let pokemon of mainPokeTeamList) {
+        pokeName = pokemon.pokeName;
+        pokeSprite = pokemon.pokeSprite;
+        addPokeToTeam(pokemon);
+    }
 
 }
 
@@ -70,8 +86,14 @@ function pokeSearch() {
 
 //Gerenciador de eventos
 function manageEvent() {
+    //Para carregar os Pokémon salvos no localStorage
+    loadPokemon();
+
+    //Para buscar o Pokémon na API
     const inputPokeName = document.getElementById("poke_name");
     inputPokeName.addEventListener("focusout", pokeSearch);
+
+    //Para salvar o Pokémon
     const saveButton = document.getElementById("save_button");
     saveButton.addEventListener("click", savePokemon);
 }
